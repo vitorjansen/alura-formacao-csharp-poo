@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A02-CriandoVariaveis", "A02
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A03-VariaveisDeTexto", "A03-VariaveisDeTexto\A03-VariaveisDeTexto.csproj", "{FA519F6B-8829-417C-83B0-FF92ED67599F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A04-Condicionais", "A07-Condicionais\A04-Condicionais.csproj", "{B250C7E7-2AAA-459B-8E3B-79DAF7D86D94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FA519F6B-8829-417C-83B0-FF92ED67599F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA519F6B-8829-417C-83B0-FF92ED67599F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA519F6B-8829-417C-83B0-FF92ED67599F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B250C7E7-2AAA-459B-8E3B-79DAF7D86D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B250C7E7-2AAA-459B-8E3B-79DAF7D86D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B250C7E7-2AAA-459B-8E3B-79DAF7D86D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B250C7E7-2AAA-459B-8E3B-79DAF7D86D94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
