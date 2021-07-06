@@ -6,26 +6,16 @@ namespace A04_Condicionais
     {
         static void Main(string[] args)
         {
-            int idade = 16;
-            int quantidadePessoas = 3;
+            int idadeJoao = 16;
+            bool acompanhado = true;
 
-            if (idade >= 18)
+            if (idadeJoao >= 18 || acompanhado == true)
             {
-                Console.WriteLine("Você tem mais que 18 anos");
-                Console.WriteLine("Seja bem vindo");
+                Console.WriteLine("Pode entrar.");
             }
             else
             {
-                if (quantidadePessoas >= 2)
-                {
-                    Console.WriteLine("voce nao tem 18, mas pode entrar, pois está acompanhado");
-
-                }
-                else
-                {
-                    Console.WriteLine("infelizmente voce nao pode entrar");
-                }
-
+                Console.WriteLine("Não pode entrar");
             }
         }
     }
