@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A03-VariaveisDeTexto", "A03
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A04-Condicionais", "A07-Condicionais\A04-Condicionais.csproj", "{B250C7E7-2AAA-459B-8E3B-79DAF7D86D94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A05-LacosDeRepeticao", "A05-LacosDeRepeticao\A05-LacosDeRepeticao.csproj", "{A4D2B9A3-1381-4B83-8C7C-6D35FC853B8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B250C7E7-2AAA-459B-8E3B-79DAF7D86D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B250C7E7-2AAA-459B-8E3B-79DAF7D86D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B250C7E7-2AAA-459B-8E3B-79DAF7D86D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D2B9A3-1381-4B83-8C7C-6D35FC853B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D2B9A3-1381-4B83-8C7C-6D35FC853B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D2B9A3-1381-4B83-8C7C-6D35FC853B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D2B9A3-1381-4B83-8C7C-6D35FC853B8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
