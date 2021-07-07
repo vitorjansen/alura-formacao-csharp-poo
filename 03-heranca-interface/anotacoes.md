@@ -55,3 +55,10 @@ public class Derivada : Base
 }
 ```
 ***
+
+# 3. Construtores e protrected
+
+### Constutores nas classes que possuem herança
+
+Assim como os métodos e propriedades, as classes derivadas também herdam os construtores. Caso já haja um construtor nela, então os dois construtores serão executados, sendo o primeiro da classe pai e em seguida o da classe filha.
+
