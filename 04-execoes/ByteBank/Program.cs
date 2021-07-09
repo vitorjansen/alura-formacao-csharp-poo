@@ -12,41 +12,14 @@ namespace ByteBank
         {
             try
             {
-                Metodo();
+                ContaCorrente conta = new ContaCorrente(0, 0);
             }
-            catch (DivideByZeroException e)
-            {
-                Console.WriteLine("Não é possível divisão por 0!");
-            }
-            catch (Exception e)
+            catch (ArgumentException e)
             {
                 Console.WriteLine(e.Message);
-                Console.WriteLine(e.StackTrace);
-            }
-            Console.ReadLine();
-        }
-
-        static void Metodo()
-        {
-            TestaDivisao(0);
-        }
-
-        static void TestaDivisao(int divisor)
-        {
-            Dividir(10, divisor);
-        }
-
-        public static int Dividir(int numero, int divisor)
-        {
-            try
-            {
-                return numero / divisor;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Exceção com numero=" + numero + " e divisor=" + divisor);
-                throw;
+                Console.WriteLine(e.ParamName);
             }
         }
+
     }
 }
