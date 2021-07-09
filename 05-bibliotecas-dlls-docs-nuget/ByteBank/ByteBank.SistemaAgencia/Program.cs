@@ -13,6 +13,7 @@ namespace ByteBank.SistemaAgencia
         static void Main(string[] args)
         {
             ContaCorrente conta = new ContaCorrente(374, 3627362);
+            conta.Sacar(213);
             FuncionarioAutenticavel carlos = null;
             carlos.Autenticar("key");
 
