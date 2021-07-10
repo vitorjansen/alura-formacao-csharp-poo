@@ -12,17 +12,35 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            int[] idades = new int[] { 15, 28, 35, 50, 28 };
+            ListaDeContaCorrente lista = new ListaDeContaCorrente();
 
-            int acumulador = 0;
-            for (int indice = 0; indice < idades.Length; indice++)
-            {
-                acumulador += idades[indice];
-                Console.WriteLine($"Valor no índice {indice}: {idades[indice]}");
-
-            }
-            int media = acumulador / idades.Length;
-            Console.WriteLine(media);
+            lista.Adicionar(new ContaCorrente(345, 23462));
+            lista.Adicionar(new ContaCorrente(363, 22451));
+            lista.Adicionar(new ContaCorrente(735, 23552));
+            lista.Adicionar(new ContaCorrente(345, 23462));
+            lista.Adicionar(new ContaCorrente(363, 22451));
+            lista.Adicionar(new ContaCorrente(735, 23552));
+            lista.Adicionar(new ContaCorrente(345, 23462));
+            lista.Adicionar(new ContaCorrente(363, 22451));
+            lista.Adicionar(new ContaCorrente(735, 23552));
+            lista.Adicionar(new ContaCorrente(345, 23462));
+            lista.Adicionar(new ContaCorrente(363, 22451));
+            lista.Adicionar(new ContaCorrente(735, 23552));
+            lista.Adicionar(new ContaCorrente(345, 23462));
+            lista.Adicionar(new ContaCorrente(363, 22451));
+            lista.Adicionar(new ContaCorrente(735, 23552));
+            lista.Adicionar(new ContaCorrente(345, 23462));
+            lista.Adicionar(new ContaCorrente(363, 22451));
+            lista.Adicionar(new ContaCorrente(735, 23552));
+            lista.Adicionar(new ContaCorrente(345, 23462));
+            lista.Adicionar(new ContaCorrente(363, 22451));
+            lista.Adicionar(new ContaCorrente(735, 23552));
+            lista.Adicionar(new ContaCorrente(345, 23462));
+            lista.Adicionar(new ContaCorrente(363, 22451));
+            lista.Adicionar(new ContaCorrente(735, 23552));
+            lista.Adicionar(new ContaCorrente(345, 23462));
+            lista.Adicionar(new ContaCorrente(363, 22451));
+            lista.Adicionar(new ContaCorrente(735, 23552));
 
             Console.ReadLine();
         }
