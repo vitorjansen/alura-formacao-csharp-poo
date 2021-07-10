@@ -14,22 +14,28 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            ContaCorrente contaDoJose = null;
 
             var contas = new List<ContaCorrente>()
             {
                 new ContaCorrente(341, 57480),
                 new ContaCorrente(342, 45678),
                 new ContaCorrente(340, 1),
+                null,
                 new ContaCorrente(340, 99999),
                 new ContaCorrente(340, 48950),
-                contaDoJose,
+                null,
                 new ContaCorrente(290, 18950)
             };
 
-            contas.Sort(new ComparadorContaCorrentePorAgencia());
+            //contas.Sort(new ComparadorContaCorrentePorAgencia());
+            var contasOrdenadas = contas.OrderBy(c => 
+                {
+                    if (c == null)
+                        return int.MaxValue;
+                    return c.Numero;
+                });
 
-            foreach (var conta in contas)
+            foreach (var conta in contasOrdenadas)
             {
                 if (conta == null)
                     Console.WriteLine("Conta sem atribuição");
