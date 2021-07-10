@@ -27,20 +27,13 @@ namespace ByteBank.SistemaAgencia
                 new ContaCorrente(290, 18950)
             };
 
-            //contas.Sort(new ComparadorContaCorrentePorAgencia());
-            var contasOrdenadas = contas.OrderBy(c => 
-                {
-                    if (c == null)
-                        return int.MaxValue;
-                    return c.Numero;
-                });
+            var contasOrdenadas = contas
+                .Where(c => c != null)
+                .OrderBy(c => c.Numero);
 
             foreach (var conta in contasOrdenadas)
             {
-                if (conta == null)
-                    Console.WriteLine("Conta sem atribuição");
-                else
-                    Console.WriteLine($"Conta número {conta.Numero}, ag. {conta.Agencia}");
+                Console.WriteLine($"Conta número {conta.Numero}, ag. {conta.Agencia}");
             }
 
             Console.ReadLine();
