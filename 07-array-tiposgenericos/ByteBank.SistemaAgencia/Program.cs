@@ -14,33 +14,27 @@ namespace ByteBank.SistemaAgencia
         {
             ListaDeContaCorrente lista = new ListaDeContaCorrente();
 
-            lista.Adicionar(new ContaCorrente(345, 23462));
-            lista.Adicionar(new ContaCorrente(363, 22451));
-            lista.Adicionar(new ContaCorrente(735, 23552));
-            lista.Adicionar(new ContaCorrente(345, 23462));
-            lista.Adicionar(new ContaCorrente(363, 22451));
-            lista.Adicionar(new ContaCorrente(735, 23552));
-            lista.Adicionar(new ContaCorrente(345, 23462));
-            lista.Adicionar(new ContaCorrente(363, 22451));
-            lista.Adicionar(new ContaCorrente(735, 23552));
-            lista.Adicionar(new ContaCorrente(345, 23462));
-            lista.Adicionar(new ContaCorrente(363, 22451));
-            lista.Adicionar(new ContaCorrente(735, 23552));
-            lista.Adicionar(new ContaCorrente(345, 23462));
-            lista.Adicionar(new ContaCorrente(363, 22451));
-            lista.Adicionar(new ContaCorrente(735, 23552));
-            lista.Adicionar(new ContaCorrente(345, 23462));
-            lista.Adicionar(new ContaCorrente(363, 22451));
-            lista.Adicionar(new ContaCorrente(735, 23552));
-            lista.Adicionar(new ContaCorrente(345, 23462));
-            lista.Adicionar(new ContaCorrente(363, 22451));
-            lista.Adicionar(new ContaCorrente(735, 23552));
-            lista.Adicionar(new ContaCorrente(345, 23462));
-            lista.Adicionar(new ContaCorrente(363, 22451));
-            lista.Adicionar(new ContaCorrente(735, 23552));
-            lista.Adicionar(new ContaCorrente(345, 23462));
-            lista.Adicionar(new ContaCorrente(363, 22451));
-            lista.Adicionar(new ContaCorrente(735, 23552));
+            ContaCorrente contaDoGui = new ContaCorrente(11111, 1111111);
+            lista.Adicionar(contaDoGui);
+            lista.Adicionar(new ContaCorrente(874, 5679787));
+            lista.Adicionar(new ContaCorrente(874, 5679754));
+            lista.Adicionar(new ContaCorrente(874, 5679445));
+            lista.Adicionar(new ContaCorrente(874, 5679445));
+            lista.Adicionar(new ContaCorrente(874, 5679445));
+            lista.Adicionar(new ContaCorrente(874, 5679445));
+            lista.Adicionar(new ContaCorrente(874, 5679445));
+            lista.Adicionar(new ContaCorrente(874, 5679445));
+            lista.Adicionar(new ContaCorrente(874, 5679445));
+            lista.Adicionar(new ContaCorrente(874, 5679445));
+            lista.Adicionar(new ContaCorrente(874, 5679445));
+
+            lista.EscreverListaNaTela();
+
+            lista.Remover(contaDoGui);
+
+            Console.WriteLine("Após remover o item");
+
+            lista.EscreverListaNaTela();
 
             Console.ReadLine();
         }
