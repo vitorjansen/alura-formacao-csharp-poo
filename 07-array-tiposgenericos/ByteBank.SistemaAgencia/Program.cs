@@ -14,27 +14,18 @@ namespace ByteBank.SistemaAgencia
         {
             ListaDeContaCorrente lista = new ListaDeContaCorrente();
 
-            ContaCorrente contaDoGui = new ContaCorrente(11111, 1111111);
-            lista.Adicionar(contaDoGui);
-            lista.Adicionar(new ContaCorrente(874, 5679787));
-            lista.Adicionar(new ContaCorrente(874, 5679754));
-            lista.Adicionar(new ContaCorrente(874, 5679445));
-            lista.Adicionar(new ContaCorrente(874, 5679445));
-            lista.Adicionar(new ContaCorrente(874, 5679445));
-            lista.Adicionar(new ContaCorrente(874, 5679445));
-            lista.Adicionar(new ContaCorrente(874, 5679445));
-            lista.Adicionar(new ContaCorrente(874, 5679445));
-            lista.Adicionar(new ContaCorrente(874, 5679445));
-            lista.Adicionar(new ContaCorrente(874, 5679445));
-            lista.Adicionar(new ContaCorrente(874, 5679445));
+            lista.AdicionarVarios(
+                new ContaCorrente(100, 40010),
+                new ContaCorrente(101, 40011),
+                new ContaCorrente(102, 40012),
+                new ContaCorrente(103, 40013)
+            );
 
-            lista.EscreverListaNaTela();
-
-            lista.Remover(contaDoGui);
-
-            Console.WriteLine("Após remover o item");
-
-            lista.EscreverListaNaTela();
+            for (int i = 0; i < lista.Tamanho; i++)
+            {
+                ContaCorrente conta = lista[i];
+                Console.WriteLine($"{conta.Agencia}/{conta.Numero}");
+            }
 
             Console.ReadLine();
         }
