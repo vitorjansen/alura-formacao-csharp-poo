@@ -13,12 +13,32 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            List<int> idades = new List<int>();
-            idades.AdicionarVarios<int>(1, 5, 14, 25, 38, 61);
+            var idades = new List<int>();
+            idades.AdicionarVarios<int>(1, 5, 14, -25, 38, 61, 17, -1005);
 
-            //O tipo não precisa ser necessariamente preenchido na chamada pois é inferido pelo compilador.
-            List<string> nomes = new List<string>();
-            nomes.AdicionarVarios("Adoniran", "Jimi Hendrix");
+            idades.Sort();
+
+            foreach (var idade in idades)
+            {
+                Console.WriteLine(idade);
+            }
+
+            Console.WriteLine("-----------------------------");
+
+            var nomes = new List<string>()
+            {
+                "Vinícius",
+                "Gisele",
+                "Mayra",
+                "Vasco"
+            };
+
+            nomes.Sort();
+
+            foreach (var nome in nomes)
+            {
+                Console.WriteLine(nome);
+            }
 
             Console.ReadLine();
         }
