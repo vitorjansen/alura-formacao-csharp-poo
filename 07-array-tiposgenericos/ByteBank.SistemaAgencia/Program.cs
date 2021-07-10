@@ -12,20 +12,16 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            ListaDeContaCorrente lista = new ListaDeContaCorrente();
+            Lista<int> idades = new Lista<int>();
 
-            lista.AdicionarVarios(
-                new ContaCorrente(100, 40010),
-                new ContaCorrente(101, 40011),
-                new ContaCorrente(102, 40012),
-                new ContaCorrente(103, 40013)
-            );
+            idades.AdicionarVarios(63, 15, 21, 50);
+            idades.Remover(15);
 
-            for (int i = 0; i < lista.Tamanho; i++)
-            {
-                ContaCorrente conta = lista[i];
-                Console.WriteLine($"{conta.Agencia}/{conta.Numero}");
-            }
+            Lista<string> cursos = new Lista<string>();
+            cursos.AdicionarVarios("C# Parte 1", "C# Parte 2", "C# Parte 3");
+
+            Lista<ContaCorrente> contas = new Lista<ContaCorrente>();
+            contas.AdicionarVarios(new ContaCorrente(124, 54354), new ContaCorrente(201, 44354));
 
             Console.ReadLine();
         }
