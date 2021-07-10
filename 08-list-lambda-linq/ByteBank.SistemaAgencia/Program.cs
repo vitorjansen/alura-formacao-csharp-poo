@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
 using ByteBank.Modelos.Funcionarios;
+using ByteBank.SistemaAgencia.Comparadores;
 using ByteBank.SistemaAgencia.Extensoes;
 
 namespace ByteBank.SistemaAgencia
@@ -13,31 +14,27 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            var idades = new List<int>();
-            idades.AdicionarVarios<int>(1, 5, 14, -25, 38, 61, 17, -1005);
+            ContaCorrente contaDoJose = null;
 
-            idades.Sort();
-
-            foreach (var idade in idades)
+            var contas = new List<ContaCorrente>()
             {
-                Console.WriteLine(idade);
-            }
-
-            Console.WriteLine("-----------------------------");
-
-            var nomes = new List<string>()
-            {
-                "Vinícius",
-                "Gisele",
-                "Mayra",
-                "Vasco"
+                new ContaCorrente(341, 57480),
+                new ContaCorrente(342, 45678),
+                new ContaCorrente(340, 1),
+                new ContaCorrente(340, 99999),
+                new ContaCorrente(340, 48950),
+                contaDoJose,
+                new ContaCorrente(290, 18950)
             };
 
-            nomes.Sort();
+            contas.Sort(new ComparadorContaCorrentePorAgencia());
 
-            foreach (var nome in nomes)
+            foreach (var conta in contas)
             {
-                Console.WriteLine(nome);
+                if (conta == null)
+                    Console.WriteLine("Conta sem atribuição");
+                else
+                    Console.WriteLine($"Conta número {conta.Numero}, ag. {conta.Agencia}");
             }
 
             Console.ReadLine();
