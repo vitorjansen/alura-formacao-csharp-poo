@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ByteBank.Modelos.Funcionarios;
 using Humanizer;
+using System.Text.RegularExpressions;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -13,11 +14,11 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            string url = "www.bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar&valor=1500";
-            ExtratorValorDeArgumentosURL extrator = new ExtratorValorDeArgumentosURL(url);
-            Console.WriteLine(extrator.GetValor("moedaOrigem"));  // real
-            Console.WriteLine(extrator.GetValor("moedaDestino")); // dolar
-            Console.WriteLine(extrator.GetValor("valor")); // 1500
+            string padrao = "[0-9]{4,5}-?[0-9]{4}";
+            string texto = "Meu número é: 2342-3453";
+
+            Match match = Regex.Match(texto, padrao);
+            Console.WriteLine(match.Value);
 
             Console.ReadLine();
         }
