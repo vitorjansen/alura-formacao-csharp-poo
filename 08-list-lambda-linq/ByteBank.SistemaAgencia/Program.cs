@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
 using ByteBank.Modelos.Funcionarios;
+using ByteBank.SistemaAgencia.Extensoes;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -13,15 +14,11 @@ namespace ByteBank.SistemaAgencia
         static void Main(string[] args)
         {
             List<int> idades = new List<int>();
+            idades.AdicionarVarios<int>(1, 5, 14, 25, 38, 61);
 
-            idades.AdicionarVarios(1, 5, 14, 25, 38, 61);
-
-            idades.Remove(5);
-
-            for (int i = 0; i < idades.Count; i++)
-            {
-                Console.WriteLine(idades[i]);
-            }
+            //O tipo não precisa ser necessariamente preenchido na chamada pois é inferido pelo compilador.
+            List<string> nomes = new List<string>();
+            nomes.AdicionarVarios("Adoniran", "Jimi Hendrix");
 
             Console.ReadLine();
         }

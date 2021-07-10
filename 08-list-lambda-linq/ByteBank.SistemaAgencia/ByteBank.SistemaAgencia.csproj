@@ -50,7 +50,7 @@
     <Compile Include="Estagiario.cs" />
     <Compile Include="Lista.cs" />
     <Compile Include="ListaDeContaCorrentes.cs" />
-    <Compile Include="ListExtensoes.cs" />
+    <Compile Include="Extensoes\ListExtensoes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
