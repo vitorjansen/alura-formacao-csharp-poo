@@ -1,7 +1,0 @@
-C:\_vitor\_estudo\csharp\cursos\alura\alura-formacao-csharp-poo\09-streams-input-output\ByteBankImportacaoExportacao\bin\Debug\ByteBankImportacaoExportacao.exe.config
-C:\_vitor\_estudo\csharp\cursos\alura\alura-formacao-csharp-poo\09-streams-input-output\ByteBankImportacaoExportacao\bin\Debug\ByteBankImportacaoExportacao.exe
-C:\_vitor\_estudo\csharp\cursos\alura\alura-formacao-csharp-poo\09-streams-input-output\ByteBankImportacaoExportacao\bin\Debug\ByteBankImportacaoExportacao.pdb
-C:\_vitor\_estudo\csharp\cursos\alura\alura-formacao-csharp-poo\09-streams-input-output\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.csproj.AssemblyReference.cache
-C:\_vitor\_estudo\csharp\cursos\alura\alura-formacao-csharp-poo\09-streams-input-output\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.csproj.CoreCompileInputs.cache
-C:\_vitor\_estudo\csharp\cursos\alura\alura-formacao-csharp-poo\09-streams-input-output\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.exe
-C:\_vitor\_estudo\csharp\cursos\alura\alura-formacao-csharp-poo\09-streams-input-output\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.pdb
