@@ -13,32 +13,66 @@ namespace ByteBankImportacaoExportacao
         static void Main(string[] args) 
         {
 
-            try
-            {
-                LerArquivo();
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine(e.Message);
-                throw;
-            }
+            CriarArquivoComStreamWriter();
 
             Console.ReadKey();
         }
 
-        static void LerArquivo()
+        static void CriarArquivoComStreamWriter()
         {
-            var enderecoDoArquivo = "contas.txt";
+            /* 
+             * FileMode.Create x FileMode.CreateNew
+             * 1. FileMode.Create: Cria o arquivo se não existir.
+             *                      Caso exista, apaga todo o conteúdo para ser utilizado do "zero".
+             * 2. FileMode.CreateNew:  Cria o arquivo se não existir.
+             *                          Caso exista, lança uma exceção.
+            */
 
-            using (var fluxoDeArquivo = new FileStream(enderecoDoArquivo, FileMode.Open))
-            using (var leitor = new StreamReader(fluxoDeArquivo))
+            var caminhoNovoArquivo = "contasExportadas.csv";
+            using (var fluxoDeArquivo = new FileStream(caminhoNovoArquivo, FileMode.Create))
+            using (var escritor = new StreamWriter(fluxoDeArquivo, Encoding.UTF8))
+            {
+                escritor.Write("456,65465,456.0,Pedro");
+            }
+        }
+
+        static void LeituraDeArquivoEConversaoParaClasse()
+        {
+            var caminhoArquivo = "contas.txt";
+            using (var fluxoDeArquivo = new FileStream(caminhoArquivo, FileMode.Open))
+            using (var leitor = new StreamReader(fluxoDeArquivo, Encoding.UTF8))
             {
                 while (!leitor.EndOfStream)
                 {
                     var linha = leitor.ReadLine();
-                    Console.WriteLine(linha);
+                    var contaCorrente = ConverterStringParaContaCorrente(linha);
+                    var msg = $"{contaCorrente.Titular.Nome} : Conta número {contaCorrente.Numero}, ag. {contaCorrente.Agencia}. Saldo: {contaCorrente.Saldo}";
+                    Console.WriteLine(msg);
                 }
             }
+        }
+
+        static ContaCorrente ConverterStringParaContaCorrente(string linha)
+        {
+            string[] campos = linha.Split(',');
+
+            var agencia = campos[0];
+            var numero = campos[1];
+            var saldo = campos[2].Replace('.', ',');
+            var nomeTitular = campos[3];
+
+            var agenciaComoInt = int.Parse(agencia);
+            var numeroComoInt = int.Parse(numero);
+            var saldoComoDouble = double.Parse(saldo);
+
+            var titular = new Cliente();
+            titular.Nome = nomeTitular;
+
+            var resultado = new ContaCorrente(agenciaComoInt, numeroComoInt);
+            resultado.Depositar(saldoComoDouble);
+            resultado.Titular = titular;
+
+            return resultado;
         }
     }
 } 
