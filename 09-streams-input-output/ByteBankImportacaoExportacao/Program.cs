@@ -12,11 +12,52 @@ namespace ByteBankImportacaoExportacao
     { 
         static void Main(string[] args) 
         {
-
-            EscritaBinaria();
-            LeituraBinaria();
+            //StreamDaConsole();
+            AuxiliaresDaclasseFile();
 
             Console.ReadKey();
+        }
+
+        private static void AuxiliaresDaclasseFile()
+        {
+            // Os exemplos abaixos são abstrações do métodos de leitura e escrita em arquivos.
+            // Com não podem ser configurados devem ser utilizados apenas em arquivos pequenos.
+            // Assim, não há problema na memória.
+
+            File.WriteAllText("escrevendoComAClasseFile.txt", "Testando File.WriteAllText");
+            Console.WriteLine("Arquivo escrevendoComAClasseFile.txt criado!");
+
+            var bytesArquivo = File.ReadAllBytes("contas.txt");
+            Console.WriteLine($"Arquivo contas.txt possui {bytesArquivo.Length} bytes");
+
+            var linhas = File.ReadAllLines("contas.txt");
+            Console.WriteLine(linhas.Length);
+        }
+
+        static void StreamDaConsole()
+        {
+            using (var fluxoDeEntrada = Console.OpenStandardInput())
+            using (var fs = new FileStream("entradaConsole.txt", FileMode.Create))
+            {
+                var buffer = new byte[1024]; // 1 kb
+
+                while (true)
+                {
+                    var bytesLidos = fluxoDeEntrada.Read(buffer, 0, 1024);
+
+                    fs.Write(buffer, 0, bytesLidos);
+                    fs.Flush();
+
+                    Console.WriteLine($"Bytes lidos da console: {bytesLidos}");
+                }
+            }
+
+            // O código abaixo é uma abstração/simplicação do código acima
+
+            Console.WriteLine("Digite seu nome:");
+            string nome = Console.ReadLine();
+            Console.WriteLine($"Olá, {nome}");
+
         }
 
         static void EscritaBinaria()
