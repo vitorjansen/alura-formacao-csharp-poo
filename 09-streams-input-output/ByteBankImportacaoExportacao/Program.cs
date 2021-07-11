@@ -13,9 +13,56 @@ namespace ByteBankImportacaoExportacao
         static void Main(string[] args) 
         {
 
-            CriarArquivoComStreamWriter();
+            EscritaBinaria();
+            LeituraBinaria();
 
             Console.ReadKey();
+        }
+
+        static void EscritaBinaria()
+        {
+            using (var fs = new FileStream("contaCorrente.txt", FileMode.Create))
+            using (var escritor = new BinaryWriter(fs))
+            {
+                escritor.Write(456); // Número da Agência
+                escritor.Write(546544); // Número da conta
+                escritor.Write(4000.50); // Saldo
+                escritor.Write("Gustavo Braga");
+
+            }
+        }
+
+        static void LeituraBinaria()
+        {
+            using (var fs = new FileStream("contaCorrente.txt", FileMode.Open))
+            using (var leitor = new BinaryReader(fs))
+            {
+                var agencia = leitor.ReadInt32();
+                var numeroConta = leitor.ReadInt32();
+                var saldo = leitor.ReadDouble();
+                var titular = leitor.ReadString();
+
+                Console.WriteLine($"{agencia}/{numeroConta} {titular} {saldo}");
+            }
+        }
+
+        static void EscritaComFlush()
+        {
+            var caminhoArquivo = "teste.txt";
+
+            using (var fluxoDeArquivo = new FileStream(caminhoArquivo, FileMode.Create))
+            using (var escritor = new StreamWriter(fluxoDeArquivo))
+            {
+                for (int i = 0; i < 100000000; i++)
+                {
+                    escritor.WriteLine($"Linha {i}");
+                    // O método Flush despeja o conteudo do buffer no arquivo.
+                    // Consequentemente o arquivo será preenchido conforme execução e não apenas no final.
+                    escritor.Flush();
+                    Console.WriteLine($"Linha {i} foi escrita no arquivo. Tecle enter p adicionar mais uma!");
+                    Console.ReadLine();
+                }
+            }
         }
 
         static void CriarArquivoComStreamWriter()
